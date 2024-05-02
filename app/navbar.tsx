@@ -1,8 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import React from "react";
 import { Bug } from "lucide-react";
+import { usePathname } from "next/navigation";
+import classNames from "classnames";
 
 const Navbar: React.FC = () => {
+  const currentPath = usePathname();
+
   //links array
   const links = [
     { href: "/", label: "Dashboard" },
@@ -17,9 +23,19 @@ const Navbar: React.FC = () => {
 
       <ul className="flex space-x-6">
         {links.map(({ href, label }) => (
-          <Link href={href} key={href}>
-            {label}
-          </Link>
+          <li key={href}>
+            <Link
+              href={href}
+              className={classNames({
+                "text-orange-400": currentPath === href,
+                "text-zinc-400": currentPath !== href,
+                //hover
+                "hover:text-zinc-300 transition-colors": currentPath !== href,
+              })}
+            >
+              {label}
+            </Link>
+          </li>
         ))}
       </ul>
     </nav>

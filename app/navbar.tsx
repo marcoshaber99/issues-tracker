@@ -27,10 +27,10 @@ const Navbar: React.FC = () => {
             <Link
               href={href}
               className={classNames({
-                "text-orange-400": currentPath === href,
-                "text-zinc-400": currentPath !== href,
+                "text-blue-700 font-semibold ": currentPath === href,
+                "text-zinc-600": currentPath !== href,
                 //hover
-                "hover:text-zinc-300 transition-colors": currentPath !== href,
+                "hover:text-gray-900 transition-colors": currentPath !== href,
               })}
             >
               {label}

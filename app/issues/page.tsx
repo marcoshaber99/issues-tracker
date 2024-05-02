@@ -1,12 +1,15 @@
+import { Button } from "@radix-ui/themes";
+import Link from "next/link";
 import React from "react";
 
-const Issues: React.FC = () => {
+const IssuesPage: React.FC = () => {
   return (
     <div>
-      <h1>Issues Page</h1>
-      {/* Add your code for displaying issues here */}
+      <Button>
+        <Link href="/issues/new">Create Issue</Link>
+      </Button>
     </div>
   );
 };
 
-export default Issues;
+export default IssuesPage;
